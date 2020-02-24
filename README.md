@@ -890,3 +890,5 @@ compact(["foo", 0]);
 unique(["foo", "foo"]);
 union(["foo"], ["bar"], ["foo"]);
 ```
+
+> Polish [version](https://github.com/mbiesiad/frontend-guidelines/blob/pl-lang/README.md) by: [@mbiesiad](https://github.com/mbiesiad)
