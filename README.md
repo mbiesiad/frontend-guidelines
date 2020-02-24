@@ -1,10 +1,10 @@
-# Frontend Guidelines
+# Frontend - Wskazówki
 
 ## HTML
 
-### Semantics
+### Semantyka
 
-HTML5 provides us with lots of semantic elements aimed to describe precisely the content. Make sure you benefit from its rich vocabulary.
+HTML5 zapewnia nam wiele elementów semantycznych mających na celu dokładne opisanie treści. Upewnij się, że korzystasz z jego bogatego słownictwa.
 
 ```html
 <!-- bad -->
@@ -30,8 +30,8 @@ HTML5 provides us with lots of semantic elements aimed to describe precisely the
 </main>
 ```
 
-Make sure you understand the semantics of the elements you're using. It's worse to use a semantic
-element in a wrong way than staying neutral.
+Upewnij się, że rozumiesz semantykę używanych elementów. Gorzej jest używać semantycznego
+elementu w niewłaściwy sposób niż pozostawić neutralnym.
 
 ```html
 <!-- bad -->
@@ -47,9 +47,9 @@ element in a wrong way than staying neutral.
 </h1>
 ```
 
-### Brevity
+### Zwięzłość
 
-Keep your code terse. Forget about your old XHTML habits.
+Zachowaj zwięzły kod. Zapomnij o swoich starych nawykach XHTML.
 
 ```html
 <!-- bad -->
@@ -86,15 +86,14 @@ Keep your code terse. Forget about your old XHTML habits.
 </html>
 ```
 
-### Accessibility
+### Dostępność
 
-Accessibility shouldn't be an afterthought. You don't have to be a WCAG expert to improve your
-website, you can start immediately by fixing the little things that make a huge difference, such as:
+Dostępność powinna być przemyślana. Nie musisz być ekspertem WCAG, aby poprawić swoją stronę internetową, możesz natychmiast rozpocząć od naprawy drobiazgów, które mają ogromną różnicę, takich jak:
 
-* learning to use the `alt` attribute properly
-* making sure your links and buttons are marked as such (no `<div class=button>` atrocities)
-* not relying exclusively on colors to communicate information
-* explicitly labelling form controls
+* nauki prawidłowego korzystania z atrybutu `alt`
+* upewniając się, że twoje linki i przyciski są oznaczone jako takie (`<div class = button>`)
+* nie polegają wyłącznie na kolorach w przekazywaniu informacji
+* wyraźnym oznaczaniu formantów formularza
 
 ```html
 <!-- bad -->
@@ -104,14 +103,12 @@ website, you can start immediately by fixing the little things that make a huge 
 <h1><img alt=Company src=logo.png></h1>
 ```
 
-### Language & character encoding
+### Język i kodowanie znaków
 
-While defining the language is optional, it's recommended to always declare
-it on the root element.
+Chociaż definiowanie języka jest opcjonalne, zaleca się, aby zawsze deklarować na elemencie głównym.
 
-The HTML standard requires that pages use the UTF-8 character encoding.
-It has to be declared, and although it can be declared in the Content-Type HTTP header,
-it is recommended to always declare it at the document level.
+Standard HTML wymaga, aby strony korzystały z kodowania znaków UTF-8.
+To musi zostać zadeklarowane i chociaż może być zadeklarowane w nagłówku HTTP Content-Type, zaleca się, aby zawsze deklarować to na poziomie dokumentu.
 
 ```html
 <!-- bad -->
@@ -126,13 +123,13 @@ it is recommended to always declare it at the document level.
 </html>
 ```
 
-### Performance
+### Wydajność
 
-Unless there's a valid reason for loading your scripts before your content, don't block the
-rendering of your page. If your style sheet is heavy, isolate the styles that are absolutely
-required initially and defer the loading of the secondary declarations in a separate style sheet.
-Two HTTP requests is significantly slower than one, but the perception of speed is the most
-important factor.
+O ile nie ma ważnego powodu do załadowania skryptów przed treścią, nie blokuj
+renderingu swojej strony. Jeśli twój arkusz stylów jest ciężki, izoluj style absolutnie
+wymagane początkowo i odłóż ładowanie deklaracji wtórnych do osobnego arkusza stylów.
+Dwa żądania HTTP są znacznie wolniejsze niż jedno, ale postrzeganie prędkości jest najbardziej
+ważnym czynnikiem.
 
 ```html
 <!-- bad -->
@@ -152,9 +149,9 @@ important factor.
 
 ## CSS
 
-### Semicolons
+### Średniki
 
-While the semicolon is technically a separator in CSS, always treat it as a terminator.
+Podczas gdy średnik jest technicznie separatorem w CSS, zawsze traktuj go jako terminator.
 
 ```css
 /* bad */
@@ -170,9 +167,9 @@ div {
 
 ### Box model
 
-The box model should ideally be the same for the entire document. A global
-`* { box-sizing: border-box; }` is fine, but don't change the default box model
-on specific elements if you can avoid it.
+Box model powinien idealnie być taki sam dla całego dokumentu. Globalny
+`* { box-sizing: border-box; }` jest w porządku, ale nie zmieniaj domyślnego modelu pudełka
+na konkretne elementy, jeśli możesz tego uniknąć.
 
 ```css
 /* bad */
@@ -190,9 +187,9 @@ div {
 
 ### Flow
 
-Don't change the default behavior of an element if you can avoid it. Keep elements in the
-natural document flow as much as you can. For example, removing the white-space below an
-image shouldn't make you change its default display:
+Nie zmieniaj domyślnego zachowania elementu, jeśli możesz tego uniknąć. Zachowaj elementy w
+naturalnym przepływie dokumentów, jak możesz. Na przykład, usunięcie spacji poniżej
+obrazu nie powininno powodować zmiany domyślnego wyświetlania:
 
 ```css
 /* bad */
@@ -206,7 +203,7 @@ img {
 }
 ```
 
-Similarly, don't take an element off the flow if you can avoid it.
+Podobnie, nie zdejmuj elementu z przepływu, jeśli możesz tego uniknąć.
 
 ```css
 /* bad */
@@ -223,17 +220,17 @@ div {
 }
 ```
 
-### Positioning
+### Pozycjonowanie
 
-There are many ways to position elements in CSS. Favor modern layout specifications
-such as Flexbox and Grid, and avoid removing elements from the normal document flow, for example
-with `position: absolute`.
+Istnieje wiele sposobów pozycjonowania elementów w CSS. Preferuj nowoczesne specyfikacje układu
+takich jak Flexbox i Grid, i na przykład unikaj usuwania elementów z normalnego obiegu dokumentów
+z `position: absolute`.
 
-### Selectors
+### Selektory
 
-Minimize selectors tightly coupled to the DOM. Consider adding a class to the elements
-you want to match when your selector exceeds 3 structural pseudo-classes, descendant or
-sibling combinators.
+Minimalizuj selektory ściśle powiązane z DOM. Rozważ dodanie klasy do elementów, które
+chcesz dopasować, gdy twój selektor przekroczy 3 strukturalne pseudoklasy, potomek lub
+kombinatory rodzeństwa.
 
 ```css
 /* bad */
@@ -243,7 +240,7 @@ div:first-of-type :last-child > p ~ *
 div:first-of-type .info
 ```
 
-Avoid overloading your selectors when you don't need to.
+Unikaj przeciążania selektorów, gdy nie jest to konieczne.
 
 ```css
 /* bad */
@@ -257,10 +254,10 @@ img[src$=svg], ul > li:first-child {
 }
 ```
 
-### Specificity
+### Szczegółowość
 
-Don't make values and selectors hard to override. Minimize the use of `id`'s
-and avoid `!important`.
+Nie utrudniaj nadpisywania wartości i selektorów. Zminimalizuj użycie `id`
+i unikaj `!important`.
 
 ```css
 /* bad */
@@ -282,7 +279,7 @@ and avoid `!important`.
 
 ### Overriding
 
-Overriding styles makes selectors and debugging harder. Avoid it when possible.
+Nadpisywanie stylów utrudnia korzystanie z selektorów i debugowanie. Unikaj, jeśli to możliwe.
 
 ```css
 /* bad */
@@ -299,9 +296,9 @@ li + li {
 }
 ```
 
-### Inheritance
+### Dziedziczenie
 
-Don't duplicate style declarations that can be inherited.
+Nie powielaj deklaracji stylu, które można dziedziczyć.
 
 ```css
 /* bad */
@@ -315,10 +312,10 @@ div {
 }
 ```
 
-### Brevity
+### Zwięzłość
 
-Keep your code terse. Use shorthand properties and avoid using multiple properties when
-it's not needed.
+Zachowaj zwięzły kod. Użyj właściwości skróconych i unikaj używania wielu właściwości, kiedy
+to nie jest potrzebne.
 
 ```css
 /* bad */
