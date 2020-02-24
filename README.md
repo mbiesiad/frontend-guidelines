@@ -337,9 +337,9 @@ div {
 }
 ```
 
-### Language
+### Język
 
-Prefer English over math.
+Preferuj angielski ponad matematykę.
 
 ```css
 /* bad */
@@ -353,10 +353,10 @@ Prefer English over math.
 }
 ```
 
-### Vendor prefixes
+### Prefiksy dostawcy
 
-Kill obsolete vendor prefixes aggressively. If you need to use them, insert them before the
-standard property.
+Agresywnie zabijaj przestarzałe prefiksy dostawców. Jeśli chcesz ich użyć, włóż je przed
+standardowa właściwość.
 
 ```css
 /* bad */
@@ -379,10 +379,10 @@ div {
 }
 ```
 
-### Animations
+### Animacje
 
-Favor transitions over animations. Avoid animating other properties than
-`opacity` and `transform`.
+Preferuj przejścia zamiast animacji. Unikaj animowania innych właściwości niż
+`opacity` oraz `transform`.
 
 ```css
 /* bad */
@@ -402,10 +402,10 @@ div:hover {
 }
 ```
 
-### Units
+### Jednostki
 
-Use unitless values when you can. Favor `rem` if you use relative units. Prefer seconds over
-milliseconds.
+W miarę możliwości używaj wartości bezjednostkowych. Preferuj `rem`, jeśli używasz jednostek względnych. Preferuj sekundy
+niż milisekundy.
 
 ```css
 /* bad */
@@ -425,9 +425,9 @@ div {
 }
 ```
 
-### Colors
+### Kolory
 
-If you need transparency, use `rgba`. Otherwise, always use the hexadecimal format.
+Jeśli potrzebujesz przejrzystości, użyj `rgba`. W przeciwnym razie zawsze używaj formatu szesnastkowego.
 
 ```css
 /* bad */
@@ -441,9 +441,9 @@ div {
 }
 ```
 
-### Drawing
+### Rysowanie
 
-Avoid HTTP requests when the resources are easily replicable with CSS.
+Unikaj żądań HTTP, gdy zasoby można łatwo replikować za pomocą CSS.
 
 ```css
 /* bad */
@@ -464,7 +464,7 @@ div::before {
 
 ### Hacks
 
-Don't use them.
+Nie używaj ich.
 
 ```css
 /* bad */
@@ -482,11 +482,11 @@ div {
 
 ## JavaScript
 
-### Performance
+### Wydajność
 
-Favor readability, correctness and expressiveness over performance. JavaScript will basically never
-be your performance bottleneck. Optimize things like image compression, network access and DOM
-reflows instead. If you remember just one guideline from this document, choose this one.
+Lepsza czytelność, poprawność i ekspresja, niż wydajność. JavaScript zasadniczo nigdy nie będzie
+twoim zatorem wydajności. Zoptymalizuj takie rzeczy, jak kompresja obrazu, dostęp do sieci i przepływ DOM.
+Jeśli pamiętasz tylko jedną wytyczną z tego dokumentu, wybierz tę.
 
 ```javascript
 // bad (albeit way faster)
@@ -508,9 +508,9 @@ const square = n => n * n;
 const result = arr.filter(isEven).map(square);
 ```
 
-### Statelessness
+### Bezstanowość
 
-Try to keep your functions pure. All functions should ideally produce no side-effects, use no outside data and return new objects instead of mutating existing ones.
+Staraj się utrzymywać czystość swoich funkcji. Wszystkie funkcje powinny idealnie nie wywoływać efektów ubocznych, nie wykorzystywać zewnętrznych danych i zwracać nowe obiekty zamiast mutować istniejące.
 
 ```javascript
 // bad
@@ -524,7 +524,7 @@ merge({ foo: "foo" }, { bar: "bar" }); // => { foo: "foo", bar: "bar" }
 
 ### Natives
 
-Rely on native methods as much as possible.
+W miarę możliwości polegaj na metodach natywnych.
 
 ```javascript
 // bad
@@ -550,7 +550,7 @@ if (x == undefined) { ... }
 
 ### Loops
 
-Don't use loops as they force you to use mutable objects. Rely on `array.prototype` methods.
+Nie używaj pętli, ponieważ zmuszają cię do korzystania ze obiektów mutable. Polegaj na metodach `array.prototype`.
 
 ```javascript
 // bad
@@ -571,7 +571,7 @@ const sum = arr =>
 
 sum([1, 2, 3]); // => 6
 ```
-If you can't, or if using `array.prototype` methods is arguably abusive, use recursion.
+Jeśli nie możesz lub jeśli użycie metody `array.prototype` jest prawdopodobnie nieodpowiednie, użyj rekurencji.
 
 ```javascript
 // bad
@@ -598,14 +598,14 @@ const createDivs = howMany => {
 createDivs(5);
 ```
 
-Here's a [generic loop function](https://gist.github.com/bendc/6cb2db4a44ec30208e86) making recursion easier to use.
+Oto [ogólna funkcja pętli](https://gist.github.com/bendc/6cb2db4a44ec30208e86) dzięki czemu rekursja jest łatwiejsza w użyciu.
 
-### Arguments
+### Argumenty
 
-Forget about the `arguments` object. The rest parameter is always a better option because:
+Zapomnij o obiekcie `arguments`. Reszta parametru jest zawsze lepszą opcją, ponieważ:
 
-1. it's named, so it gives you a better idea of the arguments the function is expecting
-2. it's a real array, which makes it easier to use.
+1. ma nazwę, dzięki czemu lepiej rozumiesz argumenty, których oczekuje funkcja
+2. to prawdziwa tablica, która ułatwia korzystanie z niej.
 
 ```javascript
 // bad
@@ -618,7 +618,7 @@ const sortNumbers = (...numbers) => numbers.sort();
 
 ### Apply
 
-Forget about `apply()`. Use the spread operator instead.
+Zapomnij o `apply()`. Zamiast tego użyj operatora spread.
 
 ```javascript
 const greet = (first, last) => `Hi ${first} ${last}`;
@@ -631,9 +631,9 @@ greet.apply(null, person);
 greet(...person);
 ```
 
-### Bind
+### Bindowanie
 
-Don't `bind()` when there's a more idiomatic approach.
+Nie używaj `bind()` kiedy jest bardziej idiomatyczne podejście.
 
 ```javascript
 // bad
@@ -666,9 +666,9 @@ const person = {
 }
 ```
 
-### Higher-order functions
+### Funkcje wyższego rzędu
 
-Avoid nesting functions when you don't have to.
+Unikaj funkcji zagnieżdżania, gdy nie musisz.
 
 ```javascript
 // bad
@@ -680,7 +680,7 @@ Avoid nesting functions when you don't have to.
 
 ### Composition
 
-Avoid multiple nested function calls. Use composition instead.
+Unikaj wielu zagnieżdżonych wywołań funkcji. Zamiast tego użyj composition.
 
 ```javascript
 const plus1 = a => a + 1;
@@ -697,7 +697,7 @@ addThenMult(5); // => 12
 
 ### Caching
 
-Cache feature tests, large data structures and any expensive operation.
+Cache dla testów funkcji, dużych struktur danych i wszelkich kosztownych operacji.
 
 ```javascript
 // bad
@@ -716,9 +716,9 @@ const contains = (() =>
 contains(["foo", "bar"], "baz"); // => false
 ```
 
-### Variables
+### Zmienne
 
-Favor `const` over `let` and `let` over `var`.
+Sprzyjaj `const` nad `let` oraz `let` nad `var`.
 
 ```javascript
 // bad
@@ -730,9 +730,9 @@ const me = new Map();
 me.set("name", "Ben").set("country", "Belgium");
 ```
 
-### Conditions
+### Warunki
 
-Favor IIFE's and return statements over if, else if, else and switch statements.
+Preferuj IIFE i zwracaj instrukcje nad if, else if, else i instrukcjami switch.
 
 ```javascript
 // bad
@@ -754,9 +754,9 @@ const grade = (() => {
 })();
 ```
 
-### Object iteration
+### Iteracja obiektu
 
-Avoid `for...in` when you can.
+Unikaj `for...in` kiedy tylko możesz.
 
 ```javascript
 const shared = { foo: "foo" };
@@ -777,10 +777,10 @@ for (var prop in obj) {
 Object.keys(obj).forEach(prop => console.log(prop));
 ```
 
-### Objects as Maps
+### Obiekty jako Mapy
 
-While objects have legitimate use cases, maps are usually a better, more powerful choice. When in
-doubt, use a `Map`.
+Podczas gdy obiekty mają uzasadnione przypadki użycia, mapy są zwykle lepszym, bardziej wydajnym wyborem. Kiedy masz
+wątpliwość, użyj `Map`.
 
 ```javascript
 // bad
@@ -805,8 +805,7 @@ me.size; // => 3
 
 ### Curry
 
-Currying is a powerful but foreign paradigm for many developers. Don't abuse it as its appropriate
-use cases are fairly unusual.
+Currying to potężny, ale obcy paradygmat dla wielu programistów. Nie nadużywaj go, ponieważ odpowiednie przypadki użycia są dość nietypowe.
 
 ```javascript
 // bad
@@ -818,9 +817,9 @@ const sum = (a, b) => a + b;
 sum(5, 3); // => 8
 ```
 
-### Readability
+### Czytelność
 
-Don't obfuscate the intent of your code by using seemingly smart tricks.
+Nie zaciemniaj intencji swojego kodu za pomocą pozornie inteligentnych sztuczek.
 
 ```javascript
 // bad
@@ -844,9 +843,9 @@ const n = ~~3.14;
 const n = Math.floor(3.14);
 ```
 
-### Code reuse
+### Ponowne użycie kodu
 
-Don't be afraid of creating lots of small, highly composable and reusable functions.
+Nie bój się tworzyć wielu małych, wysoce kompostowalnych funkcji wielokrotnego użytku.
 
 ```javascript
 // bad
@@ -867,9 +866,9 @@ const product = (a, b) => a * b;
 const triple = product.bind(null, 3);
 ```
 
-### Dependencies
+### Zależności
 
-Minimize dependencies. Third-party is code you don't know. Don't load an entire library for just a couple of methods easily replicable:
+Minimalizuj zależności. Third-party to kod, którego nie znasz. Nie ładuj całej biblioteki tylko dla kilku metod, które można tak replikować:
 
 ```javascript
 // bad
