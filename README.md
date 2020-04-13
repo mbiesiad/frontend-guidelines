@@ -2,6 +2,8 @@
 
 ## HTML
 
+> Polish [version](https://github.com/mbiesiad/frontend-guidelines/blob/pl-lang/README.md) by: [@mbiesiad](https://github.com/mbiesiad)
+
 ### Semantics
 
 HTML5 provides us with lots of semantic elements aimed to describe precisely the content. Make sure you benefit from its rich vocabulary.
