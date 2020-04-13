@@ -2,7 +2,7 @@
 
 ## HTML
 
-> Polish [version](https://github.com/mbiesiad/frontend-guidelines/blob/pl-lang/README.md) by: [@mbiesiad](https://github.com/mbiesiad)
+> Wersja [polska](https://github.com/mbiesiad/frontend-guidelines/blob/pl-lang/README.md) od: [@mbiesiad](https://github.com/mbiesiad)
 
 ### Semantics
 
